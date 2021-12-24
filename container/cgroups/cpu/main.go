@@ -36,10 +36,10 @@ func cgroupSetup(pid int) {
 
 func addProcessToCgroup(fpath string, pid int) {
 	file, err := os.OpenFile(fpath, os.O_WRONLY, 0644)
-	defer file.Close()
 	if err != nil {
 		panic(err)
 	}
+	defer file.Close()
 
 	if _, err := file.WriteString(fmt.Sprintf("%d", pid)); err != nil {
 		fmt.Println("failer to write pid")
