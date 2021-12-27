@@ -8,10 +8,11 @@ import (
 
 func main() {
 
-	cmd := exec.Command("/bin/sh")
+	cmd := exec.Command("/bin/sh", "./container/cgroups/cpu/exhaust_cpu.sh")
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
+
 
 	if err := cmd.Start(); err != nil {
 		fmt.Println("cmd start error")

@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	cmd := exec.Command("/bin/sh")
+	cmd := exec.Command("/bin/sh", "./container/cgroups/memory/mount_and_exhaust_mem.sh")
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
